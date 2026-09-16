@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AI-Sage</title>
+    <meta name="description" content="Privacy Policy for the AI-Sage Discord bot.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#deletion-form', formId: 'moevqvrg' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">AI-Sage</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html" style="color: var(--text-primary);">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </nav>
+        </header>
+
+        <main class="content-page fade-in">
+            <h2>Privacy Policy</h2>
+            <p>Last updated: September 16, 2026</p>
+
+            <h3>1. Data Collection</h3>
+            <p>To provide its features, AI-Sage collects and temporarily stores the following information:</p>
+            <ul>
+                <li><strong>Guild (Server) IDs and Channel IDs</strong> where the bot is active.</li>
+                <li><strong>User IDs</strong> of members interacting with the bot.</li>
+                <li><strong>Message Content</strong> sent in the channels the bot has access to. The bot only reads new messages sent after it has been invited to the server.</li>
+            </ul>
+
+            <h3>2. Data Usage</h3>
+            <p>The collected information is used strictly for bot functionality. Relevant message context is sent securely to the Gemini API to provide AI-powered D&D answers, generate timestamps, and create varied reminder messages.</p>
+
+            <h3>3. Data Retention</h3>
+            <p>We believe in minimizing data storage:</p>
+            <ul>
+                <li><strong>Guild Channels:</strong> Only the last 10 messages sent in an accessible guild channel are kept in memory for context.</li>
+                <li><strong>Direct Messages (DMs):</strong> DMs sent directly to the bot are kept indefinitely.</li>
+                <li><strong>Bot Messages:</strong> Messages generated and sent by the bot are kept for several months until they are no longer needed for context.</li>
+                <li><strong>Server Removal:</strong> If the bot is removed from a server, all associated channel messages are deleted immediately.</li>
+            </ul>
+
+            <h3>4. Data Deletion Request</h3>
+            <p>You have the right to request the deletion of your server's data at any time. To process this request, we require the <strong>Guild ID</strong> and <strong>proof of server ownership</strong> (e.g., a screenshot of your Discord server settings showing ownership).</p>
+            <p>Please use the form below to submit a deletion request.</p>
+
+            <div data-fs-success id="success-msg">Your data deletion request has been submitted successfully. We will process it shortly.</div>
+            <div data-fs-error></div>
+
+            <form id="deletion-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="email">Contact Email</label>
+                    <input type="email" id="email" name="email" required data-fs-field />
+                    <span data-fs-error="email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="guildId">Discord Guild ID</label>
+                    <input type="text" id="guildId" name="guildId" required data-fs-field />
+                    <span data-fs-error="guildId"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="proof">Proof of Ownership (Screenshot)</label>
+                    <input type="file" id="proof" name="proof" accept="image/*" required data-fs-field />
+                    <span data-fs-error="proof"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details (Optional)</label>
+                    <textarea id="message" name="message" data-fs-field></textarea>
+                    <span data-fs-error="message"></span>
+                </div>
+
+                <button type="submit" class="btn" data-fs-submit-btn>Submit Deletion Request</button>
+            </form>
+        </main>
+
+        <footer>
+            <div style="margin-bottom: 1rem;">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p>&copy; 2026 AI-Sage. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      // Show success div when formspree finishes
+      document.addEventListener('formspree:success', function(event) {
+        if(event.detail.formId === 'moevqvrg') {
+          document.getElementById('success-msg').style.display = 'block';
+          document.getElementById('deletion-form').reset();
+        }
+      });
+    </script>
+</body>
+</html>
